@@ -7,20 +7,19 @@ void Hanoi::initialize(int n){
         }
 }
 
-void Hanoi::turn(){
-    std::cout << "turn" << std::endl;
-    solveTowers(3, 0, 1, 2);
+void Hanoi::turn(int n){
+	solveRecursive(n, 0, 2, 1);
 }
 
 void Hanoi::move(int start, int goal){
-    std::cout << "moving from " << start << " to " << goal << std::endl;
+	std::cout << "move " << start << "->" << goal << std::endl;
     towers[goal]->push(towers[start]->pop());
 }
 
-void Hanoi::solveTowers(int n, int start, int temp, int goal){
-    std::cout << "solve towers " << n << std::endl;
+void Hanoi::solveRecursive(int n, int start, int goal, int temp){
     if (n == 0) return;
-    solveTowers(n-1, start, temp, goal);
+    solveRecursive(n-1, start, temp, goal);
     move(start, goal);
-    solveTowers(n-1, temp, goal, start);
+    solveRecursive(n-1, temp, goal, start);
+
 }

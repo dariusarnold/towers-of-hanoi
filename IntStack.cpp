@@ -8,9 +8,7 @@ IntStack::IntStack(){
 }
 
 void IntStack::push(int x){
-    //assert(s.top() < x);
 	s.push(x);
-	std::cout << "pushing " << x << std::endl;
 }
 
 int IntStack::pop(){

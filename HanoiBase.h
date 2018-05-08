@@ -18,7 +18,7 @@ class HanoiBase
          * Zahl von einem der Stapel nehmen und auf einen der anderen Stapel legen. Pointer
          * auf die drei Stapel findet ihr im Array "towers".
          */
-        virtual void turn() = 0;
+        virtual void turn(int n) = 0;
 
         IntStack * towers[3];
 
