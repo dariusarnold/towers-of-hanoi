@@ -1,5 +1,6 @@
 #include "Hanoi.h"
 #include <iostream>
+#include <chrono>
 
 void Hanoi::initialize(int n){
     for (int i=0; i<3; i++){
@@ -8,7 +9,11 @@ void Hanoi::initialize(int n){
 }
 
 void Hanoi::turn(int n){
+	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
 	solveRecursive(n, 0, 2, 1);
+	std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
+	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t2-t1).count();
+	std::cout << duration << std::endl;
 }
 
 void Hanoi::move(int start, int goal){
