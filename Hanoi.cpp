@@ -12,7 +12,6 @@ void Hanoi::turn(int n){
 }
 
 void Hanoi::move(int start, int goal){
-	std::cout << "move " << start << "->" << goal << std::endl;
     towers[goal]->push(towers[start]->pop());
 }
 

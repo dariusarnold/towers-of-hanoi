@@ -7,20 +7,23 @@ class Hanoi : public HanoiBase{
 public:
 	/**
 	 * Initialisiere drei IntStacks
-	 * @param n
+	 * @param n nicht genutzt, da Stapel nur initialisiert aber nich gefüllt werden
 	 */
     void initialize(int n);
     /**
-     *
-     * @param n
+     * In der rekursiven Implementation ruft turn die Funktion zur Loesung auf. Turn wird verlassen, wenn das
+     * Spiel geloest ist.
+     * @param n Anzahl Steine zu Spielbeginn
      */
     void turn(int n);
+
     /**
      * Bewegt einen "Ring" von start nach goal.
      * @param start
      * @param goal
      */
     void move(int start, int goal);
+
     /**
      * Loest ein gegebenes Tower of Hanoi Spiel rekursiv.
      * @param n Anzahl der "Ringe", die bewegt werden muessen

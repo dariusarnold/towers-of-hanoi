@@ -11,7 +11,7 @@ class IntStack : public Stack{
 public:
 	IntStack();
 	/**
-	 * Push int x on stack.
+	 * Push integer value x on stack.
 	 */
 	void push(int x);
 	/**
