@@ -27,6 +27,8 @@ class HanoiBase
          */
         void play(int n);
 
+        virtual ~HanoiBase(){};
+
     private:
         void fillTower(int n);
         bool isSorted(IntStack * stack);

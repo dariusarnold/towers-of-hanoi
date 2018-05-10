@@ -32,6 +32,8 @@ public:
      * @param temp Zwischenstapel
      */
     void solveRecursive(int n, int start, int goal, int temp);
+
+    virtual ~Hanoi();
 };
 
 #endif // HANOI_H

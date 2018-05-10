@@ -27,3 +27,9 @@ void Hanoi::solveRecursive(int n, int start, int goal, int temp){
     solveRecursive(n-1, temp, goal, start);
 
 }
+
+Hanoi::~Hanoi(){
+	for (int i=0; i<3; i++){
+		delete towers[i];
+	}
+}

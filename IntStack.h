@@ -33,6 +33,8 @@ public:
 	 * Return number of elements in stack
 	 */
 	int size();
+
+	virtual ~IntStack(){};
 private:
 	std::stack<int> s;
 };

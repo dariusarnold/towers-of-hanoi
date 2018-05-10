@@ -13,6 +13,7 @@ class Stack
         virtual int peek() = 0;
         virtual bool isEmpty() = 0;
         virtual int size() = 0;
+        virtual ~Stack(){};
 };
 
 #endif // STACK_H
