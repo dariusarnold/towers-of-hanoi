@@ -19,6 +19,7 @@ int IntStack::pop(){
 }
 
 int IntStack::peek(){
+	if (s.size() <= 0) return -1;
 	int value = s.top();
 	return value;
 }

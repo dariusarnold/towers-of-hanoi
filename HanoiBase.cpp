@@ -7,8 +7,9 @@ void HanoiBase::play(int n) {
     initialize(n);
     fillTower(n);
     do {
-        turn(n);
+        turn();
     } while(towers[2]->size()<n);
+
 
     if (isSorted(towers[2])) {
         cout << "Spiel mit " << n << " Zahlen erfolgreich!" << endl;

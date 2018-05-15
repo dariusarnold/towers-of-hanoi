@@ -7,15 +7,14 @@ class Hanoi : public HanoiBase{
 public:
 	/**
 	 * Initialisiere drei IntStacks
-	 * @param n nicht genutzt, da Stapel nur initialisiert aber nich gefüllt werden
+	 * @param n Anzahl Scheiben mit der der erste Stapel befuellt wird
 	 */
     void initialize(int n);
+
     /**
-     * In der rekursiven Implementation ruft turn die Funktion zur Loesung auf. Turn wird verlassen, wenn das
-     * Spiel geloest ist.
-     * @param n Anzahl Steine zu Spielbeginn
+     * Spielt einen Zug
      */
-    void turn(int n);
+    void turn();
 
     /**
      * Bewegt einen "Ring" von start nach goal.
@@ -23,6 +22,11 @@ public:
      * @param goal
      */
     void move(int start, int goal);
+
+    /**
+     * Fuehrt den gueltigen Zug zwischen a und b durch, d.h. bewegt den groesserern Ring auf den kleineren Ring.
+     */
+    void moveBetween(int a, int b);
 
     /**
      * Loest ein gegebenes Tower of Hanoi Spiel rekursiv.
@@ -34,6 +38,28 @@ public:
     void solveRecursive(int n, int start, int goal, int temp);
 
     virtual ~Hanoi();
+    /**
+     * Loest ein gegebenes Tower of Hanoi Spiel iterativ.
+     */
+    void solveIterative();
+
+    /**
+     * play-Funktion der Basisklasse HanoiBase wurde erweitert, um nach einem erfolgreichem Spiel den Schritt, in dem sich der
+     * iterative Algorithmus gerade befand, zurückzusetzen.
+     */
+    void play(int n);
+
+private:
+
+    /**
+     * Gibt an ob das Spiel mit einer geraden Anzahl von Scheiben gestartet wurde.
+     */
+    bool even_number_of_disks;
+
+    /**
+     * Schritt in dem sich der iterative Algorithmus gerade befindet.
+     */
+    int step = 0;
 };
 
 #endif // HANOI_H
