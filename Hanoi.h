@@ -37,7 +37,6 @@ public:
      */
     void solveRecursive(int n, int start, int goal, int temp);
 
-    virtual ~Hanoi();
     /**
      * Loest ein gegebenes Tower of Hanoi Spiel iterativ.
      */
@@ -48,6 +47,8 @@ public:
      * iterative Algorithmus gerade befand, zurückzusetzen.
      */
     void play(int n);
+
+    virtual ~Hanoi();
 
 private:
 

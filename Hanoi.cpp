@@ -10,7 +10,11 @@ void Hanoi::initialize(int n){
 }
 
 void Hanoi::play(int n){
+	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
 	HanoiBase::play(n);
+	std::chrono::high_resolution_clock::time_point t2 = std::chrono::high_resolution_clock::now();
+	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t2-t1).count();
+	std::cout << duration << std::endl;
 	step = 0;
 }
 
@@ -64,4 +68,4 @@ void Hanoi::solveIterative(){
 	}
 	step++;
 	if (step > 2) step = 0;
-}
+	}
